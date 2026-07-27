@@ -1,2 +1,0 @@
-document.querySelector('.btn').addEventListener('mouseover',e=>e.target.style.transform='scale(1.05)');
-document.querySelector('.btn').addEventListener('mouseout',e=>e.target.style.transform='scale(1)');
