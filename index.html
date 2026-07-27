@@ -1,27 +1,587 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Earthnode Ecoworks</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthnode Ecoworks</title>
+    <meta name="description" content="Earthnode Ecoworks is building a movement that connects people, communities and technology to restore our planet and create measurable environmental impact.">
+    <meta property="og:title" content="Earthnode Ecoworks">
+    <meta property="og:description" content="Connecting people, communities and technology to restore our planet and create measurable environmental impact.">
+    <meta property="og:image" content="assets/og-image.svg">
+    <meta property="og:url" content="https://earthnode.ecoworks.vercel.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Earthnode Ecoworks">
+    <meta name="twitter:description" content="Connecting people, communities and technology to restore our planet and create measurable environmental impact.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg"></div>
-<nav><img src="assets/logo.png" class="logo"><div class="brand">EARTHNODE <span>ECOWORKS</span></div></nav>
-<section class="hero">
-<div class="glass">
-<img src="assets/logo.png" class="hero-logo">
-<h1>Building the Future of Environmental Action</h1>
-<p>Earthnode Ecoworks is building a movement that connects people, communities and technology to restore our planet.</p>
-<div class="tag">Connect • Collaborate • Create Impact</div>
-<a class="btn" href="#">Website Launching Soon</a>
-</div>
-</section>
-<section class="vision">
-<h2>Our Vision</h2>
-<p>A world where communities, innovation and nature thrive together through measurable environmental actions.</p>
-</section>
-<footer>© 2026 Earthnode Ecoworks</footer>
-<script src="script.js"></script>
-</body></html>
+    <!-- Cursor Effects -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Floating Leaves Container -->
+    <div class="floating-leaves" id="floatingLeaves"></div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <a href="#" class="logo">
+                    <img src="assets/logo.svg" alt="Earthnode Ecoworks Logo">
+                </a>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#vision" class="nav-link">Vision</a></li>
+                        <li><a href="#mission" class="nav-link">Mission</a></li>
+                        <li><a href="#values" class="nav-link">Values</a></li>
+                        <li><a href="#focus" class="nav-link">Focus Areas</a></li>
+                        <li><a href="#impact" class="nav-link">Impact</a></li>
+                        <li><a href="#volunteer" class="nav-link primary-btn">Join Movement</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#" class="logo">
+                    <img src="assets/logo.svg" alt="Earthnode Ecoworks Logo">
+                </a>
+                <ul>
+                    <li><a href="#vision" class="nav-link">Vision</a></li>
+                    <li><a href="#mission" class="nav-link">Mission</a></li>
+                    <li><a href="#values" class="nav-link">Values</a></li>
+                    <li><a href="#focus" class="nav-link">Focus Areas</a></li>
+                    <li><a href="#impact" class="nav-link">Impact</a></li>
+                    <li><a href="#volunteer" class="nav-link primary-btn">Join Movement</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <div class="hero-bg-layer"></div>
+                <div class="hero-bg-image"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Building the Future of Environmental Action</h1>
+                    <p class="hero-subtitle">
+                        Connecting people, communities and technology to restore our planet and create measurable impact.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#vision" class="btn-primary">Explore Our Vision</a>
+                        <a href="#volunteer" class="btn-secondary">Join the Movement</a>
+                    </div>
+                </div>
+                <div class="hero-logo">
+                    <img src="assets/logo.svg" alt="Earthnode Ecoworks">
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision" id="vision">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Vision</h2>
+                    <p class="section-subtitle">
+                        To create a world where communities, innovation and nature thrive together through measurable environmental actions.
+                    </p>
+                </div>
+                <div class="vision-content">
+                    <div class="vision-text">
+                        <p>We envision a future where every daydream of a planet where environmental action isn't just necessary—it's natural. Where technology serves as a bridge between human ingenuity and ecological wisdom. Where every individual feels empowered to contribute to the healing of our Earth.</p>
+                        <p>Through the power of community, the precision of technology, and the urgency of now, we're building pathways for tangible, measurable change that future generations can see, touch, and be proud of.</p>
+                    </div>
+                    <div class="vision-image">
+                        <div class="vision-img"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission" id="mission">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="section-subtitle">
+                        To empower individuals and organizations to contribute toward environmental conservation through collaboration, technology, education, and community-driven initiatives.
+                    </p>
+                </div>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="mission-icon">🤝</div>
+                        <h3>Collaboration</h3>
+                        <p>Bringing together diverse stakeholders—from local communities to global corporations—to work toward shared environmental goals.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">💻</div>
+                        <h3>Technology</h3>
+                        <p>Leveraging cutting-edge tools and data to maximize the effectiveness and transparency of environmental initiatives.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">📚</div>
+                        <h3>Education</h3>
+                        <p>Providing knowledge and resources that empower people to make informed decisions and take meaningful action.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">🌱</div>
+                        <h3>Community Action</h3>
+                        <p>Grassroots movements that create ripple effects of positive change across neighborhoods, cities, and regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="values" id="values">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Values</h2>
+                    <p class="section-subtitle">
+                        The principles that guide every decision, action, and partnership at Earthnode Ecoworks.
+                    </p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🌍</div>
+                        <h3>Planetary Stewardship</h3>
+                        <p>We recognize our sacred responsibility to protect and regenerate Earth's ecosystems for all living beings.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">👥</div>
+                        <h3>Community First</h3>
+                        <p>We believe sustainable change emerges from empowered local communities leading their own environmental journeys.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <h3>Innovation with Integrity</h3>
+                        <p>We embrace technological solutions that are both cutting-edge and ethically grounded in environmental principles.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">📊</div>
+                        <h3>Transparency & Accountability</h3>
+                        <p>We measure our impact rigorously and share results openly to build trust and drive continuous improvement.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Collaborative Spirit</h3>
+                        <p>We see partnership—not competition—as the most effective path to systemic environmental transformation.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⏳</div>
+                        <h3>Long-Term Thinking</h3>
+                        <p>We make decisions today that prioritize the health of ecosystems and communities for generations to come.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Focus Areas Section -->
+        <section class="focus" id="focus">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Focus Areas</h2>
+                    <p class="section-subtitle">
+                        Targeted initiatives where we concentrate our efforts for maximum measurable impact.
+                    </p>
+                </div>
+                <div class="focus-tabs">
+                    <button class="tab-btn active" data-tab="tree">🌳 Tree Plantation</button>
+                    <button class="tab-btn" data-tab="waste">♻️ Waste Management</button>
+                    <button class="tab-btn" data-tab="water">💧 Water Conservation</button>
+                    <button class="tab-btn" data-tab="climate">🌎 Climate Awareness</button>
+                    <button class="tab-btn" data-tab="community">🤝 Community Engagement</button>
+                    <button class="tab-btn" data-tab="education">📚 Environmental Education</button>
+                </div>
+                <div class="focus-content">
+                    <!-- Tree Plantation -->
+                    <div class="focus-panel active" id="tree-content">
+                        <div class="focus-header">
+                            <h3>Tree Plantation Campaigns</h3>
+                            <p>Restoring forests and urban green spaces through strategic, community-led planting initiatives.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">10,000+</div>
+                                    <div class="stat-label">Trees Planted</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Hectares Restored</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Community Members Engaged</div>
+                                </div>
+                            </div>
+                            <p>Our tree plantation programs focus on native species selection, community ownership, and long-term survival monitoring. We work with local nurseries, schools, and village councils to ensure plantations thrive for decades.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Waste Management -->
+                    <div class="focus-panel" id="waste-content">
+                        <div class="focus-header">
+                            <h3>Waste Management Initiatives</h3>
+                            <p>Creating circular economy solutions that transform waste challenges into resource opportunities.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Zero-Waste Communities</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">100+ tons</div>
+                                    <div class="stat-label">Waste Diverted</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">200+</div>
+                                    <div class="stat-label">Recycling Points Established</div>
+                                </div>
+                            </div>
+                            <p>We implement comprehensive waste management systems including source segregation, composting, recycling, and upcycling initiatives. Our approach emphasizes behavioral change alongside infrastructure development.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Water Conservation -->
+                    <div class="focus-panel" id="water-content">
+                        <div class="focus-header">
+                            <h3>Water Conservation Projects</h3>
+                            <p>Protecting watersheds and promoting sustainable water use in agriculture and communities.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">75+</div>
+                                    <div class="stat-label">Water Bodies Rejuvenated</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">300+</div>
+                                    <div class="stat-label">Farmers Trained</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">15+</div>
+                                    <div class="stat-label">Villages with Water Security</div>
+                                </div>
+                            </div>
+                            <p>From rainwater harvesting to efficient irrigation techniques, we address water scarcity through holistic watershed management. Our projects combine traditional wisdom with modern technology for sustainable water security.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Climate Awareness -->
+                    <div class="focus-panel" id="climate-content">
+                        <div class="focus-header">
+                            <h3>Climate Awareness Programs</h3>
+                            <p>Educating and mobilizing communities to understand and act on climate change challenges.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">200+</div>
+                                    <div class="stat-label">Workshops Conducted</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10,000+</div>
+                                    <div class="stat-label">Individuals Educated</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Schools Partnered</div>
+                                </div>
+                            </div>
+                            <p>We believe informed communities are empowered communities. Our climate awareness initiatives use storytelling, local language materials, and interactive demonstrations to make climate science accessible and actionable.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Community Engagement -->
+                    <div class="focus-panel" id="community-content">
+                        <div class="focus-header">
+                            <h3>Community Engagement</h3>
+                            <p>Building resilient environmental movements from the ground up through inclusive participation.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">1000+</div>
+                                    <div class="stat-label">Volunteers Mobilized</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">75+</div>
+                                    <div class="stat-label">Community Groups Formed</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">25+</div>
+                                    <div class="stat-label">Youth Environmental Clubs</div>
+                                </div>
+                            </div>
+                            <p>True sustainability begins with community ownership. We facilitate the formation of environmental committees, train local leaders, and create platforms for continuous community-led action and learning.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Partnerships -->
+                    <div class="focus-panel" id="corporate-content">
+                        <div class="focus-header">
+                            <h3>CSR & Corporate Partnerships</h3>
+                            <p>Creating meaningful partnerships that align business objectives with environmental stewardship.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">25+</div>
+                                    <div class="stat-label">Corporate Partners</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Employee Volunteers Engaged</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">₹5+ Cr</div>
+                                    <div class="stat-label">CSR Funds Directed</div>
+                                </div>
+                            </div>
+                            <p>We help businesses move beyond checkbox CSR to create authentic environmental impact through employee engagement, cause-related marketing, and operational sustainability initiatives.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Education -->
+                    <div class="focus-panel" id="education-content">
+                        <div class="focus-header">
+                            <h3>Environmental Education</h3>
+                            <p>Nurturing the next generation of environmental stewards through experiential learning.</p>
+                        </div>
+                        <div class="focus-body">
+                            <div class="focus-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">150+</div>
+                                    <div class="stat-label">School Programs</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">25,000+</div>
+                                    <div class="stat-label">Students Reached</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">75+</div>
+                                    <div class="stat-label">Teachers Trained</div>
+                                </div>
+                            </div>
+                            <p>Our education programs go beyond textbooks to create hands-on learning experiences in nature. From school gardens to biodiversity monitoring, we make environmental education engaging, relevant, and transformative.</p>
+                            <a href="#" class="focus-link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Earthnode Section -->
+        <section class="why-earthnode" id="why">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Earthnode?</h2>
+                    <p class="section-subtitle">
+                        What sets us apart in the environmental landscape.
+                    </p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">🎯</div>
+                        <h3>Measurable Impact</h3>
+                        <p>We don't just do good—we measure it. Every initiative includes clear metrics, baseline studies, and transparent reporting so you can see exactly what your support achieves.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🤝</div>
+                        <h3>Community-Led Approach</h3>
+                        <p>We believe solutions work best when they come from within communities. Our role is to facilitate, resource, and amplify—not to impose external agendas.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">💡</div>
+                        <h3>Innovation & Tradition</h3>
+                        <p>We blend cutting-edge technology with indigenous wisdom, creating solutions that are both effective and culturally resonant.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">📈</div>
+                        <h3>Scalable Models</h3>
+                        <p>We design initiatives that can grow and adapt, creating blueprints for success that can be replicated in similar contexts across regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact" id="impact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Impact</h2>
+                    <p class="section-subtitle">
+                        Measuring what matters in environmental conservation.
+                    </p>
+                </div>
+                <div class="impact-timeline">
+                    <div class="impact-current">
+                        <h3>Currently Launching</h3>
+                        <p>As we build our full platform, we're laying the groundwork for scalable, measurable environmental action.</p>
+                        <div class="impact-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">Trees Planted (2026)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">Communities Engaged</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">0</div>
+                                <div class="stat-label">Initiatives Launched</div>
+                            </div>
+                        </div>
+                        <p class="impact-note">*Impact metrics will go live as our platform launches</p>
+                    </div>
+                    <div class="impact-future">
+                        <h3>Projected Impact (2027-2030)</h3>
+                        <div class="future-impact-grid">
+                            <div class="future-stat">
+                                <div class="stat-number">100,000+</div>
+                                <div class="stat-label">Trees to be Planted</div>
+                            </div>
+                            <div class="future-stat">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Communities Engaged</div>
+                            </div>
+                            <div class="future-stat">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Water Bodies Rejuvenated</div>
+                            </div>
+                            <div class="future-stat">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Zero-Waste Villages</div>
+                            </div>
+                        </div>
+                        <p class="impact-note">*Based on conservative scaling of successful pilot programs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Placeholder -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">In Action</h2>
+                    <p class="section-subtitle">
+                        Glimpses of our work on the ground.
+                    </p>
+                </div>
+                <div class="gallery-placeholder">
+                    <div class="gallery-overlay">
+                        <h3>Gallery Coming Soon</h3>
+                        <p>Stay tuned for visual stories from our tree plantations, waste management projects, water conservation initiatives, and community engagement programs across India.</p>
+                        <div class="gallery-skeleton">
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer CTA Section -->
+        <section class="volunteer" id="volunteer">
+            <div class="container">
+                <div class="volunteer-content">
+                    <h2>Ready to Make a Difference?</h2>
+                    <p>Join our growing community of environmental changemakers. Whether you have hours to volunteer, skills to share, or resources to contribute, there's a place for you in the Earthnode movement.</p>
+                    <a href="#" class="btn-primary btn-large">Join the Movement</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="#">
+                            <img src="assets/logo.svg" alt="Earthnode Ecoworks Logo">
+                        </a>
+                        <p>Connect • Collaborate • Create Impact</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>About</h4>
+                            <ul>
+                                <li><a href="#vision">Vision</a></li>
+                                <li><a href="#mission">Mission</a></li>
+                                <li><a href="#values">Values</a></li>
+                                <li><a href="#focus">Focus Areas</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Get Involved</h4>
+                            <ul>
+                                <li><a href="#volunteer">Volunteer</a></li>
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Partner</a></li>
+                                <li><a href="#">Internships</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Stay Updated</h4>
+                            <ul>
+                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Newsletter</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Impact Reports</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="#">hello@earthnode.ecoworks.org</a></li>
+                                <li><a href="#">+91 XXX XXX XXX</a></li>
+                                <li><a href="#">India</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2026 Earthnode Ecoworks. All rights reserved.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook">Facebook</a>
+                            <a href="#" aria-label="Twitter">Twitter</a>
+                            <a href="#" aria-label="Instagram">Instagram</a>
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
