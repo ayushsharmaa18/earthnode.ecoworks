@@ -1,9 +1,0 @@
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Poppins,sans-serif;background:linear-gradient(135deg,#042b1d,#0d5a3b,#0f7c52);color:#fff}
-.bg{position:fixed;inset:0;background:radial-gradient(circle at top,#49d88d44,transparent 45%),radial-gradient(circle at bottom right,#17b56b33,transparent 40%)}
-nav{display:flex;align-items:center;gap:14px;padding:24px 8vw;position:relative;z-index:2}.logo{height:58px}.brand{font-weight:700}
-.hero{min-height:82vh;display:grid;place-items:center;padding:30px;position:relative;z-index:2}
-.glass{max-width:900px;text-align:center;padding:50px;border-radius:28px;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15)}
-.hero-logo{width:220px;animation:float 5s ease-in-out infinite}
-h1{font-size:3rem;margin:20px 0}.tag{display:inline-block;margin:22px 0;padding:12px 20px;border-radius:999px;background:#22c55e22;border:1px solid #8df3bb55}.btn{display:inline-block;margin-top:12px;padding:16px 28px;background:#22c55e;color:#fff;text-decoration:none;border-radius:40px;font-weight:700}
-.vision{padding:90px 10vw;text-align:center;background:#fff;color:#123}.vision h2{font-size:2.2rem;margin-bottom:20px}footer{text-align:center;padding:25px;background:#031d14}
-@keyframes float{50%{transform:translateY(-10px)}}@media(max-width:700px){h1{font-size:2rem}.hero-logo{width:160px}.glass{padding:28px}}
