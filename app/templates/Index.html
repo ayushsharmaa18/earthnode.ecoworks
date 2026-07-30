@@ -1,0 +1,170 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source
+      src="{{ url_for('static', filename='video/earth.mp4') }}"
+      type="video/mp4"
+    />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow"
+        >Vasudhaiva Kutumbakam — The World Is One Family</span
+      >
+      <h1 class="hero-tagline">
+        Roots hold the tree.<br />Community holds us.
+      </h1>
+      <p class="hero-sub">
+        Since 2019, Earthnode Ecoworks has worked at the intersection of
+        environmental revival, mental wellness, and youth livelihood — building
+        a regenerative India from the ground up.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('main.campaigns') }}" class="btn btn-primary"
+          >See Our Campaigns</a
+        >
+        <a href="{{ url_for('main.get_involved') }}" class="btn btn-outline"
+          >Get Involved</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">One Foundation. Three Roots.</span>
+      <h2>The pathway to lasting change</h2>
+      <p style="color: #514e45">
+        We work across three interconnected pillars, because a community can't
+        heal the land while its people are unwell, and can't sustain wellbeing
+        without a livelihood.
+      </p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-number">01</span>
+        <h3>Environmental Revival</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          Tree plantation drives, plastic-waste cleanups, and biodiversity
+          restoration projects run with local communities, not for them.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-number">02</span>
+        <h3>Mental Wellness</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          Free counselling, youth support circles, and workplace wellness
+          workshops led by certified mental health professionals.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-number">03</span>
+        <h3>Youth Skill Development</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          Vocational training and career pathways for underprivileged youth,
+          built with regional industry partners.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dim">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ongoing Campaigns</span>
+      <h2>Where your support goes right now</h2>
+    </div>
+    {% if campaigns %}
+    <div class="campaigns-grid">
+      {% for c in campaigns %}
+      <a
+        href="{{ url_for('main.campaign_detail', slug=c.slug) }}"
+        class="campaign-card"
+        style="color: inherit"
+      >
+        <img
+          src="{{ c.image_url or 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&h=400' }}"
+          alt="{{ c.title }}"
+        />
+        <div class="campaign-body">
+          <span class="campaign-pillar-tag">{{ c.pillar }}</span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.summary }}</p>
+          <span class="campaign-link">Learn more &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color: #7a7666">
+      Featured campaigns will appear here once added from the admin panel.
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section-forest">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-number">40K+</div>
+        <div class="stat-label">Trees Planted</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">6,200+</div>
+        <div class="stat-label">Youth Trained</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">3,500+</div>
+        <div class="stat-label">Counselling Sessions</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">18</div>
+        <div class="stat-label">States Reached</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div
+    class="container"
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    "
+  >
+    <div>
+      <span class="eyebrow">Stay Rooted</span>
+      <h2 style="margin-bottom: 0.4rem">Get our monthly impact digest</h2>
+      <p style="color: #514e45; margin: 0">
+        One email a month. No spam — just what's growing.
+      </p>
+    </div>
+    <form
+      action="{{ url_for('main.newsletter_subscribe') }}"
+      method="POST"
+      class="newsletter-row"
+    >
+      {{ newsletter_form.hidden_tag() }}
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="you@email.com"
+        required
+      />
+      <button type="submit" class="btn btn-dark">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
