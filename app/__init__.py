@@ -3,9 +3,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from sqlalchemy.exc import SQLAlchemyError
 
 from config import config
-import razorpay
+try:
+    import razorpay
+except ImportError:
+    razorpay = None
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -21,12 +25,15 @@ def create_app(config_name=None):
 
     app = Flask(__name__)
     app.config.from_object(config[config_name])
-    app.razorpay_client = razorpay.Client(
-    auth=(
-        app.config["RAZORPAY_KEY_ID"],
-        app.config["RAZORPAY_KEY_SECRET"]
-    )
-    )
+    key_id = app.config.get("RAZORPAY_KEY_ID")
+    key_secret = app.config.get("RAZORPAY_KEY_SECRET")
+
+    if razorpay and key_id and key_secret:
+        app.razorpay_client = razorpay.Client(
+            auth=(key_id, key_secret)
+        )
+    else:
+        app.razorpay_client = None
 
     db.init_app(app)
     migrate.init_app(app, db)
@@ -36,7 +43,10 @@ def create_app(config_name=None):
 
     @login_manager.user_loader
     def load_user(user_id):
-        return AdminUser.query.get(int(user_id))
+        try:
+            return db.session.get(AdminUser, int(user_id))
+        except (ValueError, TypeError, SQLAlchemyError):
+            return None
 
     from app.routes.main import main_bp
     from app.routes.admin import admin_bp
