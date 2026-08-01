@@ -45,7 +45,11 @@ endblock %} {% block content %}
       >
     </div>
 
-    {% if campaigns %}
+    {% if database_unavailable %}
+    <p style="color: #7a7666; padding: 40px 0">
+      Our campaign listings are temporarily unavailable. Please check back soon.
+    </p>
+    {% elif campaigns %}
     <div class="campaigns-grid">
       {% for c in campaigns %}
       <a

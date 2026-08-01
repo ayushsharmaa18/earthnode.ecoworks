@@ -12,10 +12,13 @@ class Config:
 
     RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
 
-    raw_db_url = os.environ.get("DATABASE_URL", "postgresql://localhost/sanjeevani_db")
-    if raw_db_url.startswith("postgres://"):
+    # Vercel does not provide a database by default.  Keep SQLAlchemy
+    # initialisable without pretending a local PostgreSQL server exists.
+    raw_db_url = os.environ.get("DATABASE_URL")
+    if raw_db_url and raw_db_url.startswith("postgres://"):
         raw_db_url = raw_db_url.replace("postgres://", "postgresql://", 1)
-    SQLALCHEMY_DATABASE_URI = raw_db_url
+    DATABASE_CONFIGURED = bool(raw_db_url)
+    SQLALCHEMY_DATABASE_URI = raw_db_url or "sqlite://"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@earthnode.org")
