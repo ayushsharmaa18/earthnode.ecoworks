@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 from config import config
+import razorpay
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -20,6 +21,12 @@ def create_app(config_name=None):
 
     app = Flask(__name__)
     app.config.from_object(config[config_name])
+    app.razorpay_client = razorpay.Client(
+    auth=(
+        app.config["RAZORPAY_KEY_ID"],
+        app.config["RAZORPAY_KEY_SECRET"]
+    )
+    )
 
     db.init_app(app)
     migrate.init_app(app, db)

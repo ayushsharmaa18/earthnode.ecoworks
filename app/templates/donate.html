@@ -1,0 +1,170 @@
+{% extends "base.html" %} {% block title %}Donate — Earthnode Ecoworks{%
+endblock %} {% block content %}
+
+<section
+  class="hero"
+  style="height: auto; min-height: 40vh; padding: 140px 0 60px"
+>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content" style="max-width: 700px">
+      <span class="eyebrow">Every Rupee Tracked</span>
+      <h1 class="hero-tagline" style="font-size: clamp(2rem, 4vw, 3.2rem)">
+        Your support, at work
+      </h1>
+      <p class="hero-sub">
+        We're a registered 80G and 12A trust — your donation is tax-deductible,
+        and we publish where every rupee goes in our annual report.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container" style="display: flex; gap: 60px; flex-wrap: wrap">
+    <div style="flex: 1; min-width: 280px">
+      <span class="eyebrow">What Your Donation Does</span>
+      <h2>See the impact</h2>
+      <div style="margin-top: 1.5rem">
+        <div class="faq-item">
+          <h3>₹500</h3>
+          <p>
+            Plants and maintains 25 saplings for their first year of growth.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>₹1,500</h3>
+          <p>
+            Funds one full month of free counselling sessions for a support
+            circle.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>₹5,000</h3>
+          <p>
+            Covers vocational training materials for one youth for a full
+            course.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex: 1; min-width: 320px">
+      <div class="form-card">
+        <h3 style="margin-bottom: 0.5rem">Bank Transfer Details</h3>
+        <p style="color: #514e45; font-size: 0.9rem; margin-bottom: 1.5rem">
+          Online payment coming soon. For now, please use the details below and
+          email us your transaction ID for a receipt.
+        </p>
+
+        <div
+          style="
+            background: var(--color-ivory);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+          "
+        
+      </div>
+      <div class="form-card">
+    <h3 style="margin-bottom:10px;">Support Our Mission</h3>
+
+    <p style="margin-bottom:20px;">
+        Choose an amount or enter your own.
+    </p>
+
+    <div class="donation-amounts">
+
+        <button class="donate-option" data-amount="500">
+            ₹500
+        </button>
+
+        <button class="donate-option" data-amount="1000">
+            ₹1000
+        </button>
+
+        <button class="donate-option" data-amount="2500">
+            ₹2500
+        </button>
+
+        <button class="donate-option" data-amount="5000">
+            ₹5000
+        </button>
+
+    </div>
+
+    <input
+        type="number"
+        id="customAmount"
+        placeholder="Custom Amount"
+        style="margin-top:20px;"
+    />
+
+    <button
+        id="donateBtn"
+        class="btn btn-primary"
+        style="width:100%;margin-top:20px;"
+    >
+        ❤️ Donate Securely
+    </button>
+
+    <p style="font-size:.85rem;margin-top:18px;color:#666;">
+        Secure payments powered by Razorpay.<br>
+        Supports UPI, Cards, Net Banking & Wallets.
+    </p>
+</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+let amount = 500;
+
+// Select donation amount
+document.querySelectorAll(".donate-option").forEach(btn => {
+    btn.addEventListener("click", function () {
+        document.querySelectorAll(".donate-option")
+            .forEach(b => b.classList.remove("active"));
+
+        this.classList.add("active");
+        amount = parseInt(this.dataset.amount);
+    });
+});
+
+// Donate button
+document.getElementById("donateBtn").addEventListener("click", function () {
+
+    const custom = document.getElementById("customAmount").value;
+
+    if (custom && Number(custom) > 0) {
+        amount = Number(custom);
+    }
+
+    var options = {
+        key: "YOUR_RAZORPAY_KEY_ID",
+        amount: amount * 100,
+        currency: "INR",
+        name: "Earthnode Ecoworks",
+        description: "Donation",
+        handler: function (response) {
+            alert("Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
+        },
+        theme: {
+            color: "#2E5E4E"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.open();
+});
+
+</script>
+
+{% endblock %}
+

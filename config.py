@@ -8,6 +8,10 @@ load_dotenv(os.path.join(basedir, ".env"))
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key-change-me")
 
+    RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
+
+    RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
+
     raw_db_url = os.environ.get("DATABASE_URL", "postgresql://localhost/sanjeevani_db")
     if raw_db_url.startswith("postgres://"):
         raw_db_url = raw_db_url.replace("postgres://", "postgresql://", 1)
