@@ -1,0 +1,122 @@
+{% extends "base.html" %} {% block title %}Contact Us — Earthnode Ecoworks{%
+endblock %} {% block content %}
+
+<section
+  class="hero"
+  style="height: auto; min-height: 40vh; padding: 140px 0 60px"
+>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content" style="max-width: 700px">
+      <span class="eyebrow">Reach Out</span>
+      <h1 class="hero-tagline" style="font-size: clamp(2rem, 4vw, 3.2rem)">
+        Let's talk
+      </h1>
+      <p class="hero-sub">
+        Questions, media inquiries, or just want to say hi — drop us a message
+        and someone from the team will respond within 2 working days.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container" style="display: flex; gap: 60px; flex-wrap: wrap">
+    <div style="flex: 1; min-width: 280px">
+      <span class="eyebrow">Contact Details</span>
+      <h2>Find us</h2>
+      <div style="margin-top: 2rem; color: #514e45">
+        <p style="margin-bottom: 1.5rem">
+          <strong
+            style="
+              color: var(--color-forest-deep);
+              display: block;
+              margin-bottom: 4px;
+            "
+            >Email</strong
+          >
+          hello@earthnodeecoworks.org
+        </p>
+        <p style="margin-bottom: 1.5rem">
+          <strong
+            style="
+              color: var(--color-forest-deep);
+              display: block;
+              margin-bottom: 4px;
+            "
+            >Phone</strong
+          >
+          +91-9979000055
+        </p>
+        <p style="margin-bottom: 1.5rem">
+          <strong
+            style="
+              color: var(--color-forest-deep);
+              display: block;
+              margin-bottom: 4px;
+            "
+            >Office</strong
+          >
+          Bhopal, India
+        </p>
+        <p>
+          <strong
+            style="
+              color: var(--color-forest-deep);
+              display: block;
+              margin-bottom: 4px;
+            "
+            >Office Hours</strong
+          >
+          Monday–Friday, 10 AM – 6 PM IST
+        </p>
+      </div>
+    </div>
+
+    <div style="flex: 1; min-width: 320px">
+      <div class="form-card">
+        <h3 style="margin-bottom: 1.5rem">Send us a message</h3>
+        <form method="POST">
+          {{ form.hidden_tag() }}
+
+          <div class="form-group">
+            {{ form.name.label }} {{ form.name(class="form-control",
+            placeholder="Your full name") }} {% for error in form.name.errors %}
+            <div class="field-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="form-group">
+            {{ form.email.label }} {{ form.email(class="form-control",
+            placeholder="you@email.com") }} {% for error in form.email.errors %}
+            <div class="field-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="form-group">
+            {{ form.phone.label }} {{ form.phone(class="form-control",
+            placeholder="+91 ... (optional)") }}
+          </div>
+
+          <div class="form-group">
+            {{ form.message.label }} {{ form.message(class="form-control",
+            placeholder="How can we help?") }} {% for error in
+            form.message.errors %}
+            <div class="field-error">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; justify-content: center"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

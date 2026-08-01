@@ -1,0 +1,153 @@
+{% extends "base.html" %} {% block title %}About Us — Earthnode Ecoworks{%
+endblock %} {% block content %}
+
+<section
+  class="hero"
+  style="height: auto; min-height: 50vh; padding: 140px 0 80px"
+>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content" style="max-width: 700px">
+      <span class="eyebrow">Our Story</span>
+      <h1 class="hero-tagline" style="font-size: clamp(2rem, 4vw, 3.2rem)">
+        Built by people who couldn't look away
+      </h1>
+      <p class="hero-sub">
+        Earthnode Ecoworks began in 2026 as a small group of volunteers cleaning
+        up a single neighborhood park. Today, we work across 18 states — but the
+        instinct is the same: show up, do the work, bring people along.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why We Exist</span>
+      <h2>The land, the mind, and the livelihood are one problem</h2>
+      <p style="color: #514e45">
+        You can't ask a family to protect a forest when their children are
+        hungry. You can't expect a community to thrive on a poisoned river. So
+        we don't pick one fight — we work all three fronts together, in the same
+        villages, with the same people.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dim">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Approach</span>
+      <h2>How we actually work</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-number">01</span>
+        <h3>Community-Led, Not Community-Served</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          Every project is co-designed with the local community. We bring
+          resources and coordination; they bring the knowledge of what actually
+          works here.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-number">02</span>
+        <h3>Measured, Not Assumed</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          We track survival rates of saplings, attendance at counselling
+          sessions, and placement rates after training — because good intentions
+          aren't good enough.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-number">03</span>
+        <h3>Built to Outlast Us</h3>
+        <p style="color: #514e45; font-size: 0.95rem">
+          Every program has a local handover plan from day one. Our goal in any
+          village is to eventually become unnecessary there.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">The People Behind It</span>
+      <h2>Our Core Team</h2>
+      <p style="color: #514e45">
+        A small, growing team that shows up in the villages we work in — not
+        just behind a desk.
+      </p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img
+          src="{{ url_for('static', filename='images/team/ankit-sharma.jpeg') }}"
+          alt="Ankit Sharma"
+        />
+        <h3>Ankit Sharma</h3>
+        <p class="team-location">Bhopal, Madhya Pradesh</p>
+      </div>
+      <div class="team-card">
+        <img
+          src="{{ url_for('static', filename='images/team/tarun-singh.jpeg') }}"
+          alt="Tarun Singh"
+        />
+        <h3>Tarun Singh</h3>
+        <p class="team-location">Bhopal, Madhya Pradesh</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-forest">
+  <div class="container">
+    <div class="section-head center">
+
+      <span class="eyebrow">Registered &amp; Transparent</span>
+      <h2>The paperwork, for those who want it</h2>
+      <p class="paperwork-note">
+        *These registrations are currently in process. We'll update this section
+        with certificate numbers as each one is confirmed.
+      </p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-number">80G</div>
+        <div class="stat-label">Tax Exemption Certified</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">12A</div>
+        <div class="stat-label">Registered Trust</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">FCRA</div>
+        <div class="stat-label">Foreign Contribution Cleared</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">CSR-1</div>
+        <div class="stat-label">CSR Eligible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container" style="text-align: center">
+    <span class="eyebrow">Join Us</span>
+    <h2>You don't have to watch from the sidelines</h2>
+    <p style="color: #514e45; max-width: 500px; margin: 0 auto 2rem">
+      Whether it's an afternoon or a career shift, there's a place for you in
+      this work.
+    </p>
+    <a href="{{ url_for('main.get_involved') }}" class="btn btn-dark"
+      >See How to Get Involved</a
+    >
+  </div>
+</section>
+
+{% endblock %}

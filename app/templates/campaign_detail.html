@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}{{ campaign.title }} — Earthnode
+Ecoworks{% endblock %} {% block content %}
+
+<section class="section section-ivory" style="padding-top: 140px">
+  <div class="container" style="max-width: 800px">
+    <span class="campaign-pillar-tag" style="margin-bottom: 20px"
+      >{{ campaign.pillar }}</span
+    >
+    <h1 style="margin-bottom: 1.5rem">{{ campaign.title }}</h1>
+
+    <img
+      src="{{ campaign.image_url or 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&h=500' }}"
+      alt="{{ campaign.title }}"
+      style="
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        margin-bottom: 2rem;
+      "
+    />
+
+    <p
+      style="
+        font-size: 1.1rem;
+        color: #514e45;
+        line-height: 1.8;
+        white-space: pre-line;
+      "
+    >
+      {{ campaign.description }}
+    </p>
+
+    <div
+      style="
+        margin-top: 3rem;
+        padding: 32px;
+        background: var(--color-ivory-dim);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      "
+    >
+      <div>
+        <h3 style="margin-bottom: 4px">Want to support this campaign?</h3>
+        <p style="margin: 0; color: #514e45">
+          Every contribution — time, money, or skills — moves this forward.
+        </p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+        <a href="{{ url_for('main.donate') }}" class="btn btn-primary"
+          >Donate</a
+        >
+        <a href="{{ url_for('main.get_involved') }}" class="btn btn-dark"
+          >Volunteer</a
+        >
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem">
+      <a
+        href="{{ url_for('main.campaigns') }}"
+        style="color: var(--color-clay); font-weight: 600"
+        >&larr; Back to all campaigns</a
+      >
+    </div>
+  </div>
+</section>
+
+{% endblock %}
